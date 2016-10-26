@@ -340,6 +340,7 @@ define([
     CodeCell.prototype.get_callbacks = function () {
         var that = this;
         return {
+            clear_on_done: false,
             shell : {
                 reply : $.proxy(this._handle_execute_reply, this),
                 payload : {
@@ -349,13 +350,15 @@ define([
             },
             iopub : {
                 output : function() { 
+                    that.events.trigger('set_dirty.Notebook', {value: true});
                     that.output_area.handle_output.apply(that.output_area, arguments);
                 }, 
                 clear_output : function() { 
+                    that.events.trigger('set_dirty.Notebook', {value: true});
                     that.output_area.handle_clear_output.apply(that.output_area, arguments);
                 }, 
             },
-            input : $.proxy(this._handle_input_request, this)
+            input : $.proxy(this._handle_input_request, this),
         };
     };
     
@@ -476,6 +479,7 @@ define([
         var prompt_html = CodeCell.input_prompt_function(this.input_prompt_number, nline);
         // This HTML call is okay because the user contents are escaped.
         this.element.find('div.input_prompt').html(prompt_html);
+        this.events.trigger('set_dirty.Notebook', {value: true});
     };
 
 

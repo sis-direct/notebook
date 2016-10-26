@@ -5,8 +5,8 @@ If you're reading this section, you're probably interested in contributing to
 Jupyter.  Welcome and thanks for your interest in contributing!
 
 Please take a look at the Contributor documentation, familiarize yourself with
-using the Jupyter Notebook, and introduce yourself on the mailing list and share
-what area of the project you are interested in working on.
+using the Jupyter Notebook, and introduce yourself on the mailing list and
+share what area of the project you are interested in working on.
 
 General Guidelines
 ------------------
@@ -14,7 +14,7 @@ General Guidelines
 For general documentation about contributing to Jupyter projects, see the
 `Project Jupyter Contributor Documentation`__.
 
-__ http://jupyter.readthedocs.io/en/latest/contributor/content-contributor.html
+__ https://jupyter.readthedocs.io/en/latest/contributor/content-contributor.html
 
 
 Setting Up a Development Environment
@@ -141,8 +141,8 @@ or to run just ``notebook/tests/notebook/deletecell.js``::
 Building the Documentation
 --------------------------
 
-To build the documentation you'll need `Sphinx <http://www.sphinx-doc.org/>`_, `pandoc <http://pandoc.org/>`_
-and a few other packages.
+To build the documentation you'll need `Sphinx <http://www.sphinx-doc.org/>`_,
+`pandoc <http://pandoc.org/>`_ and a few other packages.
 
 To install (and activate) a `conda environment`_ named ``notebook_docs``
 containing all the necessary packages (except pandoc), use::
